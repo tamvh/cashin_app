@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/icons/action">
+    </qresource>
+    <qresource prefix="/icons/content">
+    </qresource>
+</RCC>

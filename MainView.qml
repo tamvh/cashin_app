@@ -2,7 +2,6 @@ import QtQuick 2.7
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0
 import QtQuick.Controls 2.3
-import QtQuick.Controls.Styles 1.4
 import QtQuick.Controls.Material 2.0
 import QtQuick.Window 2.2
 import QtGraphicalEffects 1.0
@@ -124,12 +123,11 @@ Rectangle {
                 Row {
                     Layout.alignment: Qt.AlignHCenter
                     Text {
-                        width: 210
+                        id: txtWarning
                         font.bold: true
-                        font.pixelSize: 30
+                        font.pixelSize: fntsize + 4
                         horizontalAlignment: TextField.AlignHCenter
-                        text: "HÌNH THỨC NẠP TIỀN"
-                        color: "#616161"
+                        color: "red"
                     }
                 }
                 Row {
@@ -137,25 +135,25 @@ Rectangle {
                     spacing: 30
                     Rectangle {
                         id: rectZalopay
-                        width: 130
-                        height: 130
-                        radius: 5
+                        width: 200
+                        height: 200
+                        radius: 10
                         border.color: "#F26526"
-                        border.width: 2
+                        border.width: 5
                         ColumnLayout {
                             anchors.horizontalCenter: parent.horizontalCenter
                             anchors.verticalCenter: parent.verticalCenter
-                            spacing: 10
+                            spacing: 20
                             Image {
                                 fillMode: Image.Pad
                                 Layout.alignment: Qt.AlignHCenter
                                 source: "qrc:/image/icon_zalopay.svg"
-                                scale: 1.3
+                                scale: 1.5
                             }
                             Text {
                                 text: qsTr("ZaloPay ID")
                                 color: "gray"
-                                font.pixelSize: 15
+                                font.pixelSize: 25
                             }
                         }
 
@@ -165,31 +163,31 @@ Rectangle {
                                 g_type_transfer = 1;
                                 defaultRectBorderColor();
                                 rectZalopay.border.color = "#F26526";
-                                txtPhoneOrZalopayId.placeholderText = 'Nhập Zalopay ID';
+                                txtPhoneOrZalopayId.placeholderText = 'NHẬP ZALOPAY ID';
                             }
                         }
                     }
                     Rectangle {
                         id: rectPhone
-                        width: 130
-                        height: 130
-                        radius: 5
+                        width: 200
+                        height: 200
+                        radius: 10
                         border.color: "#DDDDDD"
-                        border.width: 2
+                        border.width: 5
                         ColumnLayout {
                             anchors.horizontalCenter: parent.horizontalCenter
                             anchors.verticalCenter: parent.verticalCenter
-                            spacing: 10
+                            spacing: 20
                             Image {
                                 fillMode: Image.Pad
                                 Layout.alignment: Qt.AlignHCenter
                                 source: "qrc:/image/icon_phonenumber.svg"
-                                scale: 1.3
+                                scale: 1.5
                             }
                             Text {
                                 text: qsTr("Số điện thoại")
                                 color: "gray"
-                                font.pixelSize: 15
+                                font.pixelSize: 25
                             }
                         }
 
@@ -199,40 +197,42 @@ Rectangle {
                                 g_type_transfer = 0;
                                 defaultRectBorderColor();
                                 rectPhone.border.color = "#F26526";
-                                txtPhoneOrZalopayId.placeholderText = 'Nhập số điện thoại';
+                                txtPhoneOrZalopayId.placeholderText = 'NHẬP SỐ ĐIỆN THOẠI';
                             }
                         }
                     }
                 }
+
                 Row {
                     Rectangle {
                         width: 1
                         height: 15
                     }
                 }
+
                 Row {
                     Layout.alignment: Qt.AlignHCenter
                     TextField {
                         id: txtPhoneOrZalopayId
-                        width: 290
-                        placeholderText: "Nhập Zalopay ID"
+                        width: 430
+                        placeholderText: "NHẬP ZALOPAY ID"
                         font.bold: true
-                        font.pixelSize: fntsize + 2
+                        font.pixelSize: 36
                         horizontalAlignment: TextField.AlignHCenter
                         Material.primary: "#ef8422"
                         Material.accent: "#ef8422"
                     }
-                }
+                }            
 
                 Row {
                     Layout.alignment: Qt.AlignHCenter
                     Button {
                         id: okButton
                         text: "ĐỒNG Ý"
-                        width: 290
-                        height: 60
-                        font.pixelSize: 16
+                        width: 430
+                        height: 100
                         font.bold: true
+                        font.pixelSize: 36
                         highlighted: true
                         Material.primary: "#F26526"
                         Material.accent: "#F26526"
@@ -352,16 +352,7 @@ Rectangle {
                     }
                 }
 
-                Row {
-                    Layout.alignment: Qt.AlignHCenter
-                    Text {
-                        id: txtWarning
-                        font.bold: true
-                        font.pixelSize: fntsize + 2
-                        horizontalAlignment: TextField.AlignHCenter
-                        color: "red"
-                    }
-                }
+
             }
         }
     }
